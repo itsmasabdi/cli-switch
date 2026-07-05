@@ -1,0 +1,26 @@
+.DS_Store
+node_modules/
+coverage/
+dist/
+
+# Local config and secrets must never be committed.
+.env
+.env.*
+!.env.example
+*.log
+*.token
+*.secret
+*.key
+*.pem
+auth.json
+config.local.json
+state/
+secrets/
+
+# Provider auth/config directories are always external state.
+.azure/
+.azure-*/
+.claude/
+.codex/
+.config/
+.local/

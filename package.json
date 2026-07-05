@@ -1,0 +1,19 @@
+{
+  "name": "cli-switch",
+  "version": "0.1.0",
+  "description": "Switch cloud and AI CLI contexts without leaking credentials into projects.",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "cli-switch": "./bin/cli-switch.js",
+    "csw": "./bin/cli-switch.js"
+  },
+  "scripts": {
+    "check": "node --check bin/cli-switch.js && node --test",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

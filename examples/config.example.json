@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "contexts": {
+    "work": {
+      "description": "Work account",
+      "providers": {
+        "azure": {
+          "configDir": "~/.local/state/cli-switch/azure/work"
+        },
+        "claude": {
+          "configDir": "~/.local/state/cli-switch/claude/work"
+        },
+        "codex": {
+          "home": "~/.local/state/cli-switch/codex/work"
+        }
+      }
+    },
+    "client-a": {
+      "description": "Client A account",
+      "providers": {
+        "azure": {
+          "configDir": "~/.local/state/cli-switch/azure/client-a"
+        }
+      }
+    },
+    "personal": {
+      "description": "Personal account",
+      "providers": {
+        "azure": {
+          "configDir": "~/.local/state/cli-switch/azure/personal"
+        }
+      }
+    },
+    "claude-current": {
+      "description": "Use the default Claude Code login",
+      "providers": {
+        "claude": {
+          "useDefault": true
+        }
+      }
+    }
+  }
+}

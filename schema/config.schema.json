@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/cli-switch/config.schema.json",
+  "title": "CLI Switch config",
+  "type": "object",
+  "required": ["version", "contexts"],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "contexts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["providers"],
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "providers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "azure": {
+                "$ref": "#/$defs/azure"
+              },
+              "claude": {
+                "$ref": "#/$defs/claude"
+              },
+              "codex": {
+                "$ref": "#/$defs/codex"
+              },
+              "gcloud": {
+                "$ref": "#/$defs/gcloud"
+              },
+              "github": {
+                "$ref": "#/$defs/github"
+              },
+              "aws": {
+                "$ref": "#/$defs/aws"
+              },
+              "kubernetes": {
+                "$ref": "#/$defs/kubernetes"
+              }
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "azure": {
+      "type": "object",
+      "required": ["configDir"],
+      "properties": {
+        "configDir": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claude": {
+      "type": "object",
+      "oneOf": [
+        {
+          "required": ["configDir"]
+        },
+        {
+          "required": ["useDefault"]
+        }
+      ],
+      "properties": {
+        "configDir": {
+          "type": "string"
+        },
+        "useDefault": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "codex": {
+      "type": "object",
+      "required": ["home"],
+      "properties": {
+        "home": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "gcloud": {
+      "type": "object",
+      "properties": {
+        "configDir": {
+          "type": "string"
+        },
+        "activeConfigName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "github": {
+      "type": "object",
+      "required": ["configDir"],
+      "properties": {
+        "configDir": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "aws": {
+      "type": "object",
+      "required": ["profile"],
+      "properties": {
+        "profile": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "kubernetes": {
+      "type": "object",
+      "required": ["kubeconfig"],
+      "properties": {
+        "kubeconfig": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

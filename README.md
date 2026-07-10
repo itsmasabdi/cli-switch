@@ -1,7 +1,7 @@
 # CLI Switch
 
-> **⚠️ Superseded by [credctx](https://github.com/itsmasabdi/credctx).**
-> This repo was the prototype. credctx is the clean rebuild: composable identity
+> **⚠️ Superseded by [credswitch](https://github.com/itsmasabdi/credswitch).**
+> This repo was the prototype. credswitch is the clean rebuild: composable identity
 > contexts (accounts × contexts × folder bindings), automatic switching on `cd`,
 > complete environment hygiene, and live identity verification. This prototype is
 > kept for reference and is not maintained.

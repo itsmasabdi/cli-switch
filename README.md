@@ -1,5 +1,11 @@
 # CLI Switch
 
+> **⚠️ Superseded by [agentctx](https://github.com/itsmasabdi/agentctx).**
+> This repo was the prototype. agentctx is the clean rebuild: composable identity
+> contexts (accounts × contexts × folder bindings), automatic switching on `cd`,
+> complete environment hygiene, and live identity verification. This prototype is
+> kept for reference and is not maintained.
+
 Switch cloud and AI CLI contexts without storing credentials in project repos.
 
 CLI Switch keeps source code, examples, and tests in this repo. Real provider auth state stays outside the repo, normally under `~/.local/state/cli-switch`, and the local context map stays under `~/.config/cli-switch/config.json`.
